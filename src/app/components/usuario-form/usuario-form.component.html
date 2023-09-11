@@ -29,17 +29,17 @@
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Fecha Nacimiento</mat-label>
-                    <input name="inpFechaNac" matInput [matDatepicker]="picker">
+                    <input name="inpFechaNac" matInput [matDatepicker]="picker" ngModel>
                     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Profesión</mat-label>
-                    <input matInput>
+                    <input name="inpProfesion" matInput ngModel>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Rol</mat-label>
-                    <mat-select>
+                    <mat-select name="inpRol" ngModel>
                       <mat-option value="0">SuperUsuario</mat-option>
                       <mat-option value="1">Administrador</mat-option>
                     </mat-select>
