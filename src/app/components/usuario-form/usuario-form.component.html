@@ -1,0 +1,53 @@
+<div>
+    <mat-card>
+        <mat-card-title>Agregar Nuevo Usuario</mat-card-title>
+        <mat-card-content>
+            <form #UsuarioForm="ngForm" (ngSubmit)="nuevoUsuario(UsuarioForm)">
+                <mat-form-field>
+                    <mat-label>Rut</mat-label>
+                    <input name="inpRut" matInput ngModel>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input type="password" name="inpPsw" matInput ngModel>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input type="email" name="inpEmail" matInput ngModel>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Nombre</mat-label>
+                    <input name="inpNombre" matInput ngModel>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Apellido Paterno</mat-label>
+                    <input name="inpApPaterno" matInput ngModel>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Apellido Materno</mat-label>
+                    <input name="inpApMaterno" matInput ngModel>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Fecha Nacimiento</mat-label>
+                    <input name="inpFechaNac" matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Profesión</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Rol</mat-label>
+                    <mat-select>
+                      <mat-option value="0">SuperUsuario</mat-option>
+                      <mat-option value="1">Administrador</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-card-actions align="end">
+                    <button mat-raised-button color="primary" type="submit">Alerta!</button>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
