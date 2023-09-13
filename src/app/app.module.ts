@@ -17,7 +17,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { UsuarioService } from 'src/services/usuario.service';
-import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,8 @@ import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http'
     MatDatepickerModule,
     MatNativeDateModule,
     HttpClientModule,
+    MatGridListModule,
+
 
   ],
   providers: [

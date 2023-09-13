@@ -48,19 +48,14 @@ export class UsuarioFormComponent implements OnInit {
     this.usuarioServ.create(this.usuario).subscribe(
       (res)=>{
         console.log('Respuesta de la API', res);
-        
-        // if(res.status == 'success'){
-        //   this.status = 'success';
-        //   this.usuario = res.nuevoUsuario;
-        //   console.log(this.usuario);
-        // }else{
-        //   this.status = 'error';
-        // }
+        form.reset();
       },
       (error)=>{
         console.error('Error', error);
       }
     );
-
   }
+
+  
+
 }

@@ -16,4 +16,6 @@ export class UsuarioService{
         let headers = new HttpHeaders().set('Content-type','application/json');
         return this.http.post(this.url+'usuario',params,{headers:headers})
     }
+
+    
 }

@@ -1,5 +1,20 @@
 :host {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
   }
+
+mat-card{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+mat-card-header{
+  background-color: #673ab7;
+  color: white;
+  padding-bottom: 1rem;
+}
+mat-form-field{
+  padding-top: 2rem;
+  width: 90%;
+}
