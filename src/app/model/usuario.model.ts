@@ -11,5 +11,6 @@ export class Usuario{
         public fechaNacimiento: Date,
         public profesion: string,
         public ID_ROL: Number,
+        public fechaRegistro: Date,
     ){}
 }

@@ -19,12 +19,15 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { UsuarioService } from 'src/services/usuario.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { UsuarioListComponent } from './components/usuario-list/usuario-list.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    UsuarioListComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatNativeDateModule,
     HttpClientModule,
     MatGridListModule,
+    MatTableModule,
 
 
   ],

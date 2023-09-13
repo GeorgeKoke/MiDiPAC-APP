@@ -1,0 +1,17 @@
+mat-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+mat-card-header {
+    background-color: #673ab7;
+    color: white;
+    padding-bottom: 1rem;
+}   
+
+mat-card-content{
+    padding-top: 2rem;
+  }

@@ -27,7 +27,8 @@ export class UsuarioFormComponent implements OnInit {
       '',              // apMaterno
       new Date(),      // fechaNacimiento (usamos la fecha actual como valor predeterminado)
       '',              // profesion
-      0               // ID_ROL
+      0,               // ID_ROL
+      new Date()       //fechaRegistro (se usa fecha actual como valor predeterminado)
     );
     this.header = 'Nuevo Usuario';
     this.status = '';
@@ -48,12 +49,12 @@ export class UsuarioFormComponent implements OnInit {
     this.usuarioServ.create(this.usuario).subscribe(
       (res)=>{
         console.log('Respuesta de la API', res);
-        form.reset();
       },
       (error)=>{
         console.error('Error', error);
       }
     );
+    form.reset();
   }
 
   
