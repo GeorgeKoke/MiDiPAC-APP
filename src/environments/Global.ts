@@ -1,4 +1,4 @@
 const Global = {
-    API: 'http://localhost:4000/'
+    API: 'https://midipac-api.onrender.com/'
 };
 export default Global;
