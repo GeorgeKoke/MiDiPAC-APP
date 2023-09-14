@@ -21,5 +21,9 @@ export class UsuarioService{
         return this.http.get(this.url+'get-usuarios');
     }
 
+    search(params:string):Observable<any>{
+        return this.http.get(`${this.url}get-usuario/${params}`)
+    }
+
     
 }

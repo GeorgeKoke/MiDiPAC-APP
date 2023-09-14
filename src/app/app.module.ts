@@ -21,13 +21,17 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { UsuarioListComponent } from './components/usuario-list/usuario-list.component';
 import {MatTableModule} from '@angular/material/table';
+import { UsuarioSearchComponent } from './components/usuario-search/usuario-search.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioFormComponent,
     LoginFormComponent,
-    UsuarioListComponent
+    UsuarioListComponent,
+    UsuarioSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +48,8 @@ import {MatTableModule} from '@angular/material/table';
     HttpClientModule,
     MatGridListModule,
     MatTableModule,
+    MatIconModule,
+    MatDividerModule,
 
 
   ],

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Usuario } from 'src/app/model/usuario.model';
 import { UsuarioService } from 'src/services/usuario.service';
@@ -9,11 +9,16 @@ import { UsuarioService } from 'src/services/usuario.service';
   styleUrls: ['./usuario-form.component.css']
 })
 export class UsuarioFormComponent implements OnInit {
-  ngOnInit(): void { }
-
   public usuario: Usuario;
   public status: string;
   public header: string;
+  public nombre:string;
+  // @Input() usuarioBuscado:Usuario;
+
+
+  ngOnInit(): void {}
+
+
 
   constructor(private usuarioServ: UsuarioService) {
     this.usuario = new Usuario(
@@ -32,6 +37,7 @@ export class UsuarioFormComponent implements OnInit {
     );
     this.header = 'Nuevo Usuario';
     this.status = '';
+    
   }
 
   nuevoUsuario(form: NgForm) {
@@ -57,6 +63,10 @@ export class UsuarioFormComponent implements OnInit {
     form.reset();
   }
 
+  cargarDatosAlForm(usuario:Usuario){
+     this.usuario = usuario;
+    
+  }
   
 
 }

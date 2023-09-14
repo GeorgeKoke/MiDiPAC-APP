@@ -9,43 +9,43 @@
                     <mat-grid-tile>
                         <mat-form-field>
                             <mat-label>Rut</mat-label>
-                            <input name="inpRut" matInput ngModel>
+                            <input name="inpRut" matInput ngModel [(ngModel)]="usuario.rut">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
                         <mat-form-field>
                             <mat-label>Password</mat-label>
-                            <input type="password" name="inpPsw" matInput ngModel>
+                            <input type="password" name="inpPsw" matInput ngModel [(ngModel)]="usuario.password">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
                         <mat-form-field>
                             <mat-label>Email</mat-label>
-                            <input type="email" name="inpEmail" matInput ngModel>
+                            <input type="email" name="inpEmail" matInput ngModel [(ngModel)]="usuario.email">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
                         <mat-form-field>
                             <mat-label>Nombre</mat-label>
-                            <input name="inpNombre" matInput ngModel>
+                            <input name="inpNombre" matInput ngModel [(ngModel)]="usuario.nombre">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
                         <mat-form-field>
                             <mat-label>Apellido Paterno</mat-label>
-                            <input name="inpApPaterno" matInput ngModel>
+                            <input name="inpApPaterno" matInput ngModel [(ngModel)]="usuario.apPaterno">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
                         <mat-form-field>
                             <mat-label>Apellido Materno</mat-label>
-                            <input name="inpApMaterno" matInput ngModel>
+                            <input name="inpApMaterno" matInput ngModel [(ngModel)]="usuario.apMaterno">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
                         <mat-form-field>
                             <mat-label>Fecha Nacimiento</mat-label>
-                            <input name="inpFechaNac" matInput [matDatepicker]="picker" ngModel>
+                            <input name="inpFechaNac" matInput [matDatepicker]="picker" ngModel [(ngModel)]="usuario.fechaNacimiento">
                             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                         </mat-form-field>
@@ -53,7 +53,7 @@
                     <mat-grid-tile>
                         <mat-form-field>
                             <mat-label>Profesión</mat-label>
-                            <input name="inpProfesion" matInput ngModel>
+                            <input name="inpProfesion" matInput ngModel [(ngModel)]="usuario.profesion">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>

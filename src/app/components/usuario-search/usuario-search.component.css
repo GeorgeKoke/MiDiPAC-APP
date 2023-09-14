@@ -1,0 +1,12 @@
+mat-card{
+    margin: 2rem 0rem 2rem;
+}
+form{
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.btnSearch{
+    margin: 0rem 1rem  ;
+}

@@ -1,0 +1,19 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+<mat-card>
+    <mat-card-content>
+        <form #SearchForm="ngForm" (ngSubmit)="search(SearchForm)">
+            <mat-form-field >
+                <mat-label>Buscar</mat-label>
+                <input class="white" name="inpSearch" matInput ngModel>
+                <mat-hint>Búsqueda por Rut</mat-hint>
+            </mat-form-field>
+            <button class="btnSearch" mat-fab color="primary" type="submit">
+                <mat-icon>search</mat-icon>
+            </button>
+        </form>
+        <mat-divider></mat-divider>
+    </mat-card-content>
+</mat-card>
+<app-usuario-form ></app-usuario-form>
