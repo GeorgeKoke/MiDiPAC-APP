@@ -1,0 +1,43 @@
+:host {
+    display: flex;
+}
+
+mat-card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: auto;
+    width: 25%;
+}
+
+mat-card-title {
+    color: #673ab7;
+    padding-bottom: 1rem;
+}
+
+mat-form-field {
+    width: 95%;
+    padding-top: 2rem;
+}
+
+.card-header-logo {
+    width: 80%;
+    height: 0;
+    padding-bottom: 20%;
+    background-image: url("src/assets/Cesfam-Llay-Llay-horizontal.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+    margin: auto;
+}
+
+.card-header-logo::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.card-header-logo img {
+    object-fit: fill;
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class LoginFormComponent {
 
+  login(form:NgForm){
+    console.log("Login...");
+    console.log(`Usuario: ${form.value.inpRut}
+    Password: ${form.value.inpPsw}`);
+    
+  }
 }
