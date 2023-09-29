@@ -5,7 +5,7 @@ mat-nav-list{
     background-color:#dfccff ;
 }
 .active-link{
-    font-weight: bolder;
+    font-weight: 500;
     color: #673ab7;
     text-decoration: none;
 }

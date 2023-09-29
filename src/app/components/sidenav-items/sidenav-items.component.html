@@ -1,3 +1,6 @@
 <mat-nav-list>
-    <a mat-list-item *ngFor="let link of linkList" [routerLink]="link.url" routerLinkActive="active"><span routerLinkActive="active-link">{{link.title}}</span></a>
+    <mat-list-item *ngFor="let link of linkList" routerLinkActive="active" [routerLink]="link.url">
+        <mat-icon matListItemIcon><span routerLinkActive="active-link">{{link.icon}}</span></mat-icon>
+        <a matListItemTitle><span routerLinkActive="active-link">{{link.title}}</span></a>
+    </mat-list-item>
 </mat-nav-list>

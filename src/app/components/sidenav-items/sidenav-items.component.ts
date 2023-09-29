@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SidenavItemsComponent {
   public linkList =[
-    {title: 'Nuevo Paciente', url: '/paciente/registro'},
-    {title: 'Nuevo Usuario', url: '/usuario/registro'},
+    {title: 'Nuevo Paciente', url: '/paciente/registro',icon:'person_add'},
+    {title: 'Nuevo Usuario', url: '/usuario/registro',icon:'badge'},
   ];
 }
