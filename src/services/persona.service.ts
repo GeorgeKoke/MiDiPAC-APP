@@ -21,8 +21,8 @@ export class PersonaService{
         return this.http.get(this.url+'get-personas');
     }
 
-    search(params:string):Observable<any>{
-        return this.http.get(`${this.url}get-persona/${params}`)
+    getOne(params:any):Observable<any>{
+        return this.http.get(this.url+'find-persona/'+params);
     }
 
     

@@ -21,8 +21,8 @@ export class FonasaService{
         return this.http.get(this.url+'get-letras');
     }
 
-    search(params:string):Observable<any>{
-        return this.http.get(`${this.url}get-letra/${params}`)
+    getOne(params:any):Observable<any>{
+        return this.http.get(this.url+'get-letra/'+params);
     }
 
     

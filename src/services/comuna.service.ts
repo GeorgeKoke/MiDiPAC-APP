@@ -20,6 +20,9 @@ export class ComunaService{
     getAll():Observable<any>{
         return this.http.get(this.url+'get-comunas');
     }
+    getOne(params:any):Observable<any>{
+        return this.http.get(this.url+'get-comuna/'+params);
+    }
 
     
 }

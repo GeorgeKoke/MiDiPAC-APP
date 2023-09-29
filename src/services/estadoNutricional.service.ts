@@ -4,25 +4,25 @@ import {Observable} from 'rxjs';
 import {Injectable} from '@angular/core';
 
 @Injectable()
-export class ProgramaService{
+export class EstadoNutricionalService{
     public url: string;
 
     constructor(private http:HttpClient){
         this.url = Global.API;
     }
 
-    create(programa:any):Observable<any>{
-        let params = JSON.stringify(programa);
+    create(estado:any):Observable<any>{
+        let params = JSON.stringify(estado);
         let headers = new HttpHeaders().set('Content-type','application/json');
-        return this.http.post(this.url+'post-programa',params,{headers:headers})
+        return this.http.post(this.url+'post-estado',params,{headers:headers})
     }
 
     getAll():Observable<any>{
-        return this.http.get(this.url+'get-programas');
+        return this.http.get(this.url+'get-estados');
     }
 
     getOne(params:any):Observable<any>{
-        return this.http.get(this.url+'get-programa/'+params);
+        return this.http.get(`${this.url}get-estado/${params}`)
     }
 
     

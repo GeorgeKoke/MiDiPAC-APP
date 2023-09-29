@@ -1,0 +1,38 @@
+:host {
+    display: flex;
+  }
+
+mat-card{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+mat-card-header{
+  color: #673ab7;
+  padding-bottom: 1rem;
+  
+}
+mat-form-field{
+  padding-top: 2rem;
+  margin: 0.5rem;
+  width: 100%;
+}
+input:disabled::placeholder{
+    color: #3b216a;
+}
+mat-label{
+    font-size: large;
+    color: #aa8fd9;
+}
+mat-label:not(:focus):not(:active){
+    font-size: large;
+    color: #aa8fd9;
+}
+button{
+    margin: 0.5rem;
+}
+mat-divider{
+    margin: 0.5rem;
+}

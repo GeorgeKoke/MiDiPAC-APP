@@ -1,0 +1,193 @@
+<mat-card>
+    <mat-grid-list cols="6" rowHeight="5rem" fit>
+        <mat-grid-tile colspan="4">
+            <mat-card-header>
+                <mat-card-title>Tarjeta de Control de Distribución de Alimentos</mat-card-title>
+            </mat-card-header>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+            <form #BuscarForm="ngForm" (ngSubmit)="buscarRut(BuscarForm)" end>
+                <mat-form-field>
+                    <input class="white" name="inpBuscar" matInput ngModel placeholder="Buscar Rut">
+                    <button mat-icon-button matSuffix name="btnSearch"
+                        type="submit"><mat-icon>search</mat-icon></button>
+                </mat-form-field>
+            </form>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-card-content>
+        <form> <!-- (ngSubmit)="nuevaPersona(PersonaForm)" -->
+            <mat-grid-list cols="6" rowHeight="5rem" fit>
+                <mat-grid-tile colspan="5">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Centro de Salud</mat-label>
+                        <input name="inpCentro" matInput ngModel [placeholder]="placeholders.centro" disabled>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Sector</mat-label>
+                        <input name="inpSector" matInput ngModel [placeholder]="placeholders.sector" disabled>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Nombre</mat-label>
+                        <input name="inpNombre" matInput ngModel [placeholder]="placeholders.nombre" disabled>
+                        <!-- [(ngModel)]="persona.nombre" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Apellido Paterno</mat-label>
+                        <input name="inpApPaterno" matInput ngModel [placeholder]="placeholders.apPaterno" disabled><!-- [(ngModel)]="persona.apPaterno" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Apellido Materno</mat-label>
+                        <input name="inpApMaterno" matInput ngModel [placeholder]="placeholders.apMaterno" disabled><!-- [(ngModel)]="persona.apMaterno" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Numero de Ficha</mat-label>
+                        <input name="inpNumFicha" matInput ngModel [placeholder]="placeholders.numFicha"
+                            disabled><!-- [(ngModel)]="persona.numFicha" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Edad</mat-label>
+                        <input name="inpEdad" type="number" matInput ngModel [placeholder]="placeholders.edad"
+                            disabled><!-- [(ngModel)]="persona.apMaterno" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Rut</mat-label>
+                        <input name="inpRut" matInput ngModel [placeholder]="placeholders.rut"
+                            disabled><!-- [(ngModel)]="persona.RUT" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="4">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Dirección</mat-label>
+                        <input name="inpDireccion" matInput ngModel [placeholder]="placeholders.dir"
+                            disabled><!-- [(ngModel)]="persona.apMaterno" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="2">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Comuna</mat-label>
+                        <input name="inpComuna" matInput ngModel [placeholder]="placeholders.comuna" disabled>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="3">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Programa</mat-label>
+                        <input name="inpPrograma" matInput ngModel [placeholder]="placeholders.prog" disabled>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="3">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Fecha Ingreso</mat-label>
+                        <input name="inpFechaIngreso" matInput ngModel [placeholder]="placeholders.fecha" disabled>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+        <mat-divider></mat-divider>
+        <mat-card-header>
+            <mat-card-title>Registrar Entrega</mat-card-title>
+        </mat-card-header>
+        <form #EntregaForm="ngForm" (ngSubmit)="nuevaEntrega(EntregaForm)">
+            <mat-grid-list cols="7" rowHeight="5rem" fit>
+                <mat-grid-tile colspan="1">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Fecha de Entrega</mat-label>
+                        <input name="inpFechaEntrega" matInput [matDatepicker]="entregaPicker" ngModel>
+                        <mat-datepicker-toggle matIconSuffix [for]="entregaPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #entregaPicker></mat-datepicker>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Grupo Etario</mat-label>
+                        <mat-select name="inpGrupo" ngModel>
+                            <mat-option *ngFor="let grupo of listgrupos"[value]="grupo.ID_GRUPOETAREO">{{grupo.rango}} (meses)</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Estado Nutricional</mat-label>
+                        <mat-select name="inpEstadoNutricional" ngModel>
+                            <mat-option *ngFor="let estado of listestados"[value]="estado.ID_ESTADONUTRICIONAL">{{estado.estado}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Tipo Alimento</mat-label>
+                        <mat-select name="inpAlimento" ngModel>
+                            <mat-option *ngFor="let alimento of listalimentos"[value]="alimento.ID_ALIMENTO">{{alimento.nombreAlimento}}</mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Cantidad (kilos)</mat-label>
+                        <input type="number" name="inpCantidad" matInput ngModel placeholder="Cantidad (kilos)">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1">
+                    <mat-form-field floatLabel="always">
+                        <mat-label>Proxima Entrega</mat-label>
+                        <input name="inpFechaProxima" matInput [matDatepicker]="proximaPicker" ngModel>
+                        <mat-datepicker-toggle matIconSuffix [for]="proximaPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #proximaPicker></mat-datepicker>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1">
+                    <button mat-fab color="primary" type="submit"><mat-icon>add_circle</mat-icon></button>
+                    <button mat-fab color="warn" type="reset"><mat-icon>delete</mat-icon></button>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </form>
+        <mat-divider></mat-divider>
+        <mat-card-header>
+            <mat-card-title>Historial de Entregas</mat-card-title>
+        </mat-card-header>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z2">
+            <ng-container matColumnDef="fechaEntrega">
+                <th mat-header-cell *matHeaderCellDef>Fecha Entrega</th>
+                <td mat-cell *matCellDef="let historia">{{historia.fechaEntrega}}</td>
+            </ng-container>
+            <ng-container matColumnDef="ID_GRUPOETAREO">
+                <th mat-header-cell *matHeaderCellDef>Grupo Etario</th>
+                <td mat-cell *matCellDef="let historia">{{historia.ID_GRUPOETAREO}}</td>
+            </ng-container>
+            <ng-container matColumnDef="ID_ESTADONUTRICIONAL">
+                <th mat-header-cell *matHeaderCellDef>Estado Nutricional</th>
+                <td mat-cell *matCellDef="let historia">{{historia.ID_ESTADONUTRICIONAL}}</td>
+            </ng-container>
+            <ng-container matColumnDef="ID_ALIMENTO">
+                <th mat-header-cell *matHeaderCellDef>Tipo Alimento</th>
+                <td mat-cell *matCellDef="let historia">{{historia.ID_ALIMENTO}}</td>
+            </ng-container>
+            <ng-container matColumnDef="cantidadEntregada">
+                <th mat-header-cell *matHeaderCellDef>Cantidad (kilos)</th>
+                <td mat-cell *matCellDef="let historia">{{historia.cantidadEntregada}}</td>
+            </ng-container>
+            <ng-container matColumnDef="fechaProximaEntrega">
+                <th mat-header-cell *matHeaderCellDef>Proxima Entrega</th>
+                <td mat-cell *matCellDef="let historia">{{historia.fechaProximaEntrega}}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+        </table>
+
+
+    </mat-card-content>
+</mat-card>

@@ -21,7 +21,7 @@ export class SectorService{
         return this.http.get(this.url+'get-sectores');
     }
 
-    search(params:string):Observable<any>{
+    getOne(params:any):Observable<any>{
         return this.http.get(`${this.url}get-sector/${params}`)
     }
 

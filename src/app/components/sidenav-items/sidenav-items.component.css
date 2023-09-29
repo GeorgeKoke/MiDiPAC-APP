@@ -9,3 +9,6 @@ mat-nav-list{
     color: #673ab7;
     text-decoration: none;
 }
+.rounded{
+    border-radius: 20px;
+}

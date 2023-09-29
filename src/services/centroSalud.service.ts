@@ -21,7 +21,7 @@ export class CentroService{
         return this.http.get(this.url+'get-centros');
     }
 
-    search(params:string):Observable<any>{
+    getOne(params:any):Observable<any>{
         return this.http.get(`${this.url}get-centro/${params}`)
     }
 

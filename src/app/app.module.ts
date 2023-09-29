@@ -42,6 +42,12 @@ import { RolService } from 'src/services/rol.service';
 import { SidenavItemsComponent } from './components/sidenav-items/sidenav-items.component';
 import {MatListModule} from '@angular/material/list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { RegistroEntregaComponent } from './pages/registro-entrega/registro-entrega.component';
+import { EntregaCardComponent } from './components/entrega-card/entrega-card.component';
+import { HistorialService } from 'src/services/historial.service';
+import { GrupoEtareoService } from 'src/services/grupoEtareo.service';
+import { EstadoNutricionalService } from 'src/services/estadoNutricional.service';
+import { AlimentoService } from 'src/services/alimento.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +62,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ListarUsuariosComponent,
     PersonaFormComponent,
     RegistroPacienteComponent,
-    SidenavItemsComponent
+    SidenavItemsComponent,
+    RegistroEntregaComponent,
+    EntregaCardComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +93,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}},
     UsuarioService, HttpClient,ComunaService,PersonaService,CentroService,ProgramaService,SectorService,
-    FonasaService,RolService,
+    FonasaService,RolService,HistorialService,GrupoEtareoService,EstadoNutricionalService,AlimentoService,
   ],
   bootstrap: [AppComponent]
 })
