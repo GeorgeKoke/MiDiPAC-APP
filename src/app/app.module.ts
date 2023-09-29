@@ -41,6 +41,7 @@ import { FonasaService } from 'src/services/fonasa.service';
 import { RolService } from 'src/services/rol.service';
 import { SidenavItemsComponent } from './components/sidenav-items/sidenav-items.component';
 import {MatListModule} from '@angular/material/list';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import {MatListModule} from '@angular/material/list';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatSnackBarModule,
 
 
   ],

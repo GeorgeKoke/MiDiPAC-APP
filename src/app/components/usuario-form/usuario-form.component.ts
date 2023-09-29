@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/model/usuario.model';
 import { UsuarioService } from 'src/services/usuario.service';
 import { RolService } from 'src/services/rol.service';
 import { Rol } from 'src/app/model/rol.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-usuario-form',
@@ -28,7 +29,8 @@ export class UsuarioFormComponent implements OnInit {
 
   constructor(
     private usuarioServ: UsuarioService,
-    private rolServ: RolService
+    private rolServ: RolService,
+    private snackBar:MatSnackBar
     ) {
     this.usuario = new Usuario(
       0,               // ID_USUARIO
@@ -78,6 +80,7 @@ export class UsuarioFormComponent implements OnInit {
     this.usuarioServ.create(this.usuario).subscribe(
       (res)=>{
         console.log('Respuesta de la API', res);
+        this.snackBar.open('Usuario Registrado Correctamente','✅',{duration:3000})
       },
       (error)=>{
         console.error('Error', error);

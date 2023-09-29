@@ -12,6 +12,7 @@ import { SectorService } from 'src/services/sector.service';
 import { FonasaService } from 'src/services/fonasa.service';
 import { PersonaService } from 'src/services/persona.service';
 import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-persona-form',
@@ -39,6 +40,7 @@ export class PersonaFormComponent {
     private programaServ: ProgramaService,
     private sectorServ: SectorService,
     private fonasaServ: FonasaService,
+    private snackBar: MatSnackBar,
   ) {
     this.persona = new Persona(
       0,  //ID_PERSONA
@@ -146,6 +148,7 @@ export class PersonaFormComponent {
     this.personaServ.create(this.persona).subscribe(
       (res)=>{
         console.log('Respuesta API', res);
+        this.snackBar.open('Paciente Registrado Correctamente','✅',{duration:3000})
       },
       (error)=>{
         console.error('Error',error);
