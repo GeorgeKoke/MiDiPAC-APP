@@ -60,9 +60,7 @@
                         <mat-form-field>
                             <mat-label>Rol</mat-label>
                             <mat-select name="inpRol" ngModel>
-                              <mat-option value="0">SuperUsuario</mat-option>
-                              <mat-option value="1">Administrador</mat-option>
-                              <mat-option value="2">Operario</mat-option>
+                                <mat-option *ngFor="let rol of listRoles"[value]="rol.ID_ROL">Rol: {{rol.nombreRol}}</mat-option>
                             </mat-select>
                         </mat-form-field>
                     </mat-grid-tile>

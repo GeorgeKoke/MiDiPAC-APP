@@ -1,5 +1,7 @@
 <mat-sidenav-container class="example-container" >
-    <mat-sidenav #sidenav mode="push">Hola</mat-sidenav>
+    <mat-sidenav #sidenav mode="push">
+        <app-sidenav-items></app-sidenav-items>
+    </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar color="primary" class="mat-elevation-z8">
             <button mat-icon-button (click)="sidenav.toggle()">

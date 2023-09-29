@@ -38,6 +38,9 @@ import { CentroService } from 'src/services/centroSalud.service';
 import { ProgramaService } from 'src/services/programa.service';
 import { SectorService } from 'src/services/sector.service';
 import { FonasaService } from 'src/services/fonasa.service';
+import { RolService } from 'src/services/rol.service';
+import { SidenavItemsComponent } from './components/sidenav-items/sidenav-items.component';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,8 @@ import { FonasaService } from 'src/services/fonasa.service';
     NavbarComponent,
     ListarUsuariosComponent,
     PersonaFormComponent,
-    RegistroPacienteComponent
+    RegistroPacienteComponent,
+    SidenavItemsComponent
   ],
   imports: [
     BrowserModule,
@@ -72,13 +76,14 @@ import { FonasaService } from 'src/services/fonasa.service';
     MatDividerModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatListModule,
 
 
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}},
     UsuarioService, HttpClient,ComunaService,PersonaService,CentroService,ProgramaService,SectorService,
-    FonasaService,
+    FonasaService,RolService,
   ],
   bootstrap: [AppComponent]
 })

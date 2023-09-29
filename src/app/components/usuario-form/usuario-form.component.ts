@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Usuario } from 'src/app/model/usuario.model';
 import { UsuarioService } from 'src/services/usuario.service';
+import { RolService } from 'src/services/rol.service';
+import { Rol } from 'src/app/model/rol.model';
 
 @Component({
   selector: 'app-usuario-form',
@@ -9,6 +11,8 @@ import { UsuarioService } from 'src/services/usuario.service';
   styleUrls: ['./usuario-form.component.css']
 })
 export class UsuarioFormComponent implements OnInit {
+  public roles: Rol[] = [];
+  public listRoles:any;
   public usuario: Usuario;
   public status: string;
   public header: string;
@@ -16,11 +20,16 @@ export class UsuarioFormComponent implements OnInit {
   // @Input() usuarioBuscado:Usuario;
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cargarRoles();
+  }
 
 
 
-  constructor(private usuarioServ: UsuarioService) {
+  constructor(
+    private usuarioServ: UsuarioService,
+    private rolServ: RolService
+    ) {
     this.usuario = new Usuario(
       0,               // ID_USUARIO
       '',              // username
@@ -38,6 +47,20 @@ export class UsuarioFormComponent implements OnInit {
     this.header = 'Nuevo Usuario';
     this.status = '';
     
+  }
+
+  cargarRoles(){
+    this.rolServ.getAll().subscribe(
+      (res) => {
+        console.log(res);
+        this.roles = res;
+        this.listRoles = this.roles;
+        console.log(this.listRoles);
+
+      }, (error) => {
+        console.error('Error', error);
+      }
+    );
   }
 
   nuevoUsuario(form: NgForm) {

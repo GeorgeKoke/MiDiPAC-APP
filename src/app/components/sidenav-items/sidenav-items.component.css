@@ -1,0 +1,11 @@
+mat-nav-list{
+    min-width: 20vw;
+}
+.active{
+    background-color:#dfccff ;
+}
+.active-link{
+    font-weight: bolder;
+    color: #673ab7;
+    text-decoration: none;
+}
