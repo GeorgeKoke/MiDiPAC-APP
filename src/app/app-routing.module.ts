@@ -10,7 +10,7 @@ import { RegistroEntregaComponent } from './pages/registro-entrega/registro-entr
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'paciente/entrega',
     pathMatch: 'full'
   },
   { path: 'login', component: LoginComponent },
