@@ -1,0 +1,13 @@
+<mat-sidenav-container class="example-container" >
+    <mat-sidenav #sidenav mode="push">Hola</mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary" class="mat-elevation-z8">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>MiDiPAC APP</span>
+        </mat-toolbar>
+        <!-- MAIN CONTENT HERE -->
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>

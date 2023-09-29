@@ -14,26 +14,26 @@ export class UsuarioListComponent {
 
   constructor(
     private usuarioServ: UsuarioService
-  ){}
-  
-    ngOnInit():void{
-      this.getAll();
-    }
-    
-    getAll(){
-      this.usuarioServ.getAll().subscribe(
-        (res)=>{
-          console.log(res);
-          this.usuarios = res;
-          this.dataSource = this.usuarios;
-          console.log(this.dataSource);
-        
-    },(error)=>{
-      console.error('Error', error);
-    }
+  ) { }
+
+  ngOnInit():void {
+    this.getAll();
+  }
+
+  getAll() {
+    this.usuarioServ.getAll().subscribe(
+      (res) => {
+        console.log(res);
+        this.usuarios = res;
+        this.dataSource = this.usuarios;
+        console.log(this.dataSource);
+
+      }, (error) => {
+        console.error('Error', error);
+      }
     )
   }
-  
 
-  columnsToDisplay = ['ID_USUARIO','rut','password', 'nombre','apPaterno','apMaterno','profesion', 'ID_ROL'];
+
+  columnsToDisplay = ['ID_USUARIO', 'rut', 'password', 'nombre', 'apPaterno', 'apMaterno', 'profesion', 'ID_ROL'];
 }

@@ -1,0 +1,124 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Ingresar Nuevo Paciente</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form #PersonaForm="ngForm" (ngSubmit)="nuevaPersona(PersonaForm)"> <!--  -->
+            <mat-grid-list cols="4" rowHeight="5rem" fit>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label >Rut</mat-label>
+                        <input name="inpRut" matInput ngModel ><!-- [(ngModel)]="persona.RUT" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Nombre</mat-label>
+                        <input name="inpNombre" matInput ngModel > <!-- [(ngModel)]="persona.nombre" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Apellido Paterno</mat-label>
+                        <input name="inpApPaterno" matInput ngModel ><!-- [(ngModel)]="persona.apPaterno" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Apellido Materno</mat-label>
+                        <input name="inpApMaterno" matInput ngModel ><!-- [(ngModel)]="persona.apMaterno" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Nombre Social</mat-label>
+                        <input name="inpNombreSocial" matInput ngModel ><!-- [(ngModel)]="persona.apMaterno" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Fecha Nacimiento</mat-label>
+                        <input name="inpFechaNac" matInput [matDatepicker]="picker" ngModel ><!-- [(ngModel)]="persona.fechaNacimiento" -->
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Edad</mat-label>
+                        <input name="inpEdad" type="number" matInput ngModel ><!-- [(ngModel)]="persona.apMaterno" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Teléfono</mat-label>
+                        <input name="inpTelefono" type="tel" matInput ngModel ><!-- [(ngModel)]="persona.apMaterno" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Dirección</mat-label>
+                        <input name="inpDireccion" matInput ngModel ><!-- [(ngModel)]="persona.apMaterno" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Comuna</mat-label>
+                        <mat-select name="inpComuna" ngModel>
+                          <mat-option *ngFor="let comuna of listcomunas"[value]="comuna.ID_COMUNA">{{comuna.nombreComuna}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Centro de Salud</mat-label>
+                        <mat-select name="inpCentro" [(value)]="centroSelected" ngModel>
+                            <mat-option *ngFor="let centro of listcentros"[value]="centro.ID_CENTROSALUD">{{centro.nombreCentroSalud}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field >
+                        <mat-label>Sector</mat-label>
+                        <mat-select name="inpSector" ngModel>
+                            <span *ngFor="let sector of listsectores"><mat-option *ngIf="sector.ID_CENTROSALUD == centroSelected" [value]="sector.ID_SECTOR">{{sector.nombreSector}}</mat-option></span>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Numero de Ficha</mat-label>
+                        <input name="inpNumFicha" matInput ngModel ><!-- [(ngModel)]="persona.numFicha" -->
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Letra Fonasa</mat-label>
+                        <mat-select name="inpFonasa" ngModel>
+                            <mat-option *ngFor="let letra of listletras"[value]="letra.ID_FONASA">Tramo: {{letra.letraFonasa}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Programa</mat-label>
+                        <mat-select name="inpPrograma" ngModel>
+                            <span *ngFor="let programa of listprogramas"><mat-option *ngIf="programa.ID_GRUPOETAREO == 0" [value]="programa.ID_PROGRAMA">{{programa.nombrePrograma}}</mat-option></span>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Fecha Ingreso</mat-label>
+                        <input name="inpFechaIngreso" matInput [matDatepicker]="ingresoPicker" ngModel > <!-- [(ngModel)]="persona.fechaNacimiento" -->
+                        <mat-datepicker-toggle matIconSuffix [for]="ingresoPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #ingresoPicker></mat-datepicker>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <mat-card-actions align="end">
+                <button mat-raised-button color="primary" type="submit">Guardar</button>
+            </mat-card-actions>
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -12,6 +12,6 @@ export class LoginFormComponent {
     console.log("Login...");
     console.log(`Usuario: ${form.value.inpRut}
     Password: ${form.value.inpPsw}`);
-    
+    form.reset()
   }
 }

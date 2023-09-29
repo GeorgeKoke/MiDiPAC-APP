@@ -24,6 +24,20 @@ import {MatTableModule} from '@angular/material/table';
 import { UsuarioSearchComponent } from './components/usuario-search/usuario-search.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import { LoginComponent } from './pages/login/login.component';
+import { RegistroUsuarioComponent } from './pages/registro-usuario/registro-usuario.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { ListarUsuariosComponent } from './pages/listar-usuarios/listar-usuarios.component';
+import { PersonaFormComponent } from './components/persona-form/persona-form.component';
+import { RegistroPacienteComponent } from './pages/registro-paciente/registro-paciente.component';
+import { ComunaService } from 'src/services/comuna.service';
+import { PersonaService } from 'src/services/persona.service';
+import { CentroService } from 'src/services/centroSalud.service';
+import { ProgramaService } from 'src/services/programa.service';
+import { SectorService } from 'src/services/sector.service';
+import { FonasaService } from 'src/services/fonasa.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +45,13 @@ import {MatDividerModule} from '@angular/material/divider';
     UsuarioFormComponent,
     LoginFormComponent,
     UsuarioListComponent,
-    UsuarioSearchComponent
+    UsuarioSearchComponent,
+    LoginComponent,
+    RegistroUsuarioComponent,
+    NavbarComponent,
+    ListarUsuariosComponent,
+    PersonaFormComponent,
+    RegistroPacienteComponent
   ],
   imports: [
     BrowserModule,
@@ -50,12 +70,15 @@ import {MatDividerModule} from '@angular/material/divider';
     MatTableModule,
     MatIconModule,
     MatDividerModule,
+    MatToolbarModule,
+    MatSidenavModule,
 
 
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}},
-    UsuarioService, HttpClient,
+    UsuarioService, HttpClient,ComunaService,PersonaService,CentroService,ProgramaService,SectorService,
+    FonasaService,
   ],
   bootstrap: [AppComponent]
 })
